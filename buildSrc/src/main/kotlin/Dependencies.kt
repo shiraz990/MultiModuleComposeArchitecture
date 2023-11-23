@@ -3,6 +3,9 @@ import org.gradle.kotlin.dsl.project
 
 object Dependencies {
 
+    const val gradlePlugin ="org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.gradlePlugin}"
+
+
     const val coreKtx ="androidx.core:core-ktx:${Versions.coreKtx}"
     const val junit ="junit:junit:${Versions.junit}"
     const val lifecycleRuntimeKtx ="androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"

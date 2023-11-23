@@ -1,4 +1,5 @@
 object Versions {
+    const val gradlePlugin = "1.8.10"
     const val coreKtx = "1.9.0"
     const val junit = "4.13.2"
     const val lifecycleRuntimeKtx ="2.6.2"
