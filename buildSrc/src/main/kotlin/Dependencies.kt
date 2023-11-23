@@ -2,12 +2,23 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.kotlin.dsl.project
 
 object Dependencies {
+
+    const val coreKtx ="androidx.core:core-ktx:${Versions.coreKtx}"
+    const val junit ="junit:junit:${Versions.junit}"
+    const val lifecycleRuntimeKtx ="androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"
+    const val androidTestJunit ="androidx.test.ext:junit:${Versions.androidTestJunit}"
+    const val androidTestEspresso ="aandroidx.test.espresso:espresso-core:${Versions.androidTestEspresso}"
+
     const val composeMaterial = "androidx.compose.material3:material3:${Versions.composeMaterial3}"
     const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"
     const val composeUiGraphics = "androidx.compose.ui:ui-graphics:${Versions.compose}"
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
     const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
     const val composeRuntime = "androidx.compose.runtime:runtime:${Versions.compose}"
+    const val composeActivity ="androidx.activity:activity-compose:${Versions.composeActivity}"
+    const val composeUiTestJunit ="androidx.compose.ui:ui-test-junit4"
+    const val composeUiTestManifest ="androidx.compose.ui:ui-test-manifest"
+
 
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
@@ -23,6 +34,16 @@ object Dependencies {
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
     const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
 }
+
+
+fun DependencyHandler.defaultDependencies() {
+    implementation(Dependencies.coreKtx)
+    implementation(Dependencies.lifecycleRuntimeKtx)
+    testImplementation(Dependencies.junit)
+    androidTestImplementation(Dependencies.androidTestJunit)
+    androidTestImplementation(Dependencies.androidTestEspresso)
+}
+
 
 fun DependencyHandler.room() {
     implementation(Dependencies.roomRuntime)
@@ -43,7 +64,10 @@ fun DependencyHandler.compose() {
     implementation(Dependencies.composeUiGraphics)
     implementation(Dependencies.composeUiTooling)
     implementation(Dependencies.composeMaterial)
+    implementation(Dependencies.composeActivity)
     debugImplementation(Dependencies.composeUiToolingPreview)
+    debugImplementation(Dependencies.composeUiTestManifest)
+    androidTestImplementation(Dependencies.composeUiTestJunit)
 }
 
 fun DependencyHandler.hilt() {
