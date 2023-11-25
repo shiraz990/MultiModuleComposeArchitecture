@@ -21,6 +21,11 @@ object Dependencies {
     const val composeActivity ="androidx.activity:activity-compose:${Versions.composeActivity}"
     const val composeUiTestJunit ="androidx.compose.ui:ui-test-junit4"
     const val composeUiTestManifest ="androidx.compose.ui:ui-test-manifest"
+    const val composeNavigation = "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
+    const val composeHiltNavigation = "androidx.hilt:hilt-navigation-compose:${Versions.composeHiltNavigation}"
+
+
+    const val coilImage = "io.coil-kt:coil-compose:${Versions.coilImage}"
 
 
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
@@ -31,6 +36,7 @@ object Dependencies {
     const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
 
     const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
@@ -56,6 +62,7 @@ fun DependencyHandler.room() {
 
 fun DependencyHandler.retrofit() {
     implementation(Dependencies.retrofit)
+    implementation(Dependencies.retrofitGsonConverter)
     implementation(Dependencies.moshiConverter)
     implementation(Dependencies.okHttp)
     implementation(Dependencies.okHttpLoggingInterceptor)
@@ -68,6 +75,9 @@ fun DependencyHandler.compose() {
     implementation(Dependencies.composeUiTooling)
     implementation(Dependencies.composeMaterial)
     implementation(Dependencies.composeActivity)
+    implementation(Dependencies.composeNavigation)
+    implementation(Dependencies.composeHiltNavigation)
+    implementation(Dependencies.coilImage)
     debugImplementation(Dependencies.composeUiToolingPreview)
     debugImplementation(Dependencies.composeUiTestManifest)
     androidTestImplementation(Dependencies.composeUiTestJunit)

@@ -1,4 +1,3 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -6,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.feature.movie_details.data"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -25,20 +24,21 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
 dependencies {
 
-    implementation(libs.core.ktx)
+    defaultDependencies()
+    /*implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.espresso.core)*/
 }

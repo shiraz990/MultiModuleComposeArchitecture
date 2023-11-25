@@ -6,6 +6,10 @@ object Versions {
     const val composeActivity ="1.7.2"
     const val androidTestJunit ="1.1.5"
     const val androidTestEspresso ="3.5.1"
+    const val composeNavigation ="2.7.5"
+    const val composeHiltNavigation ="1.0.0"
+    const val coilImage ="2.5.0"
+
 
     const val compose = "1.4.3"
     const val composeMaterial3 = "1.1.1"
