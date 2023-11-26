@@ -76,22 +76,16 @@ fun DependencyHandler.compose() {
     implementation(Dependencies.composeMaterial)
     implementation(Dependencies.composeActivity)
     implementation(Dependencies.composeNavigation)
-    implementation(Dependencies.composeHiltNavigation)
     implementation(Dependencies.coilImage)
     debugImplementation(Dependencies.composeUiToolingPreview)
     debugImplementation(Dependencies.composeUiTestManifest)
     androidTestImplementation(Dependencies.composeUiTestJunit)
 }
+fun DependencyHandler.hiltComposeNavigation(){
+    implementation(Dependencies.composeHiltNavigation)
+}
 
 fun DependencyHandler.hilt() {
     implementation(Dependencies.hiltAndroid)
     kapt(Dependencies.hiltCompiler)
-}
-
-fun DependencyHandler.booksDataSource() {
-    implementation(project(":books-datasource"))
-}
-
-fun DependencyHandler.booksUi() {
-    implementation(project(":books-ui"))
 }
